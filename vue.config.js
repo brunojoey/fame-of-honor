@@ -6,7 +6,7 @@ module.exports = {
     proxy: {
       // wants to set /api/ = localhost only when in development
       '^/api': {
-        target: "https://fame-of-honor-server.herokuapp.com/api/teams",
+        target: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: { '^/api': '/'},
