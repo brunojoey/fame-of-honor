@@ -4,6 +4,7 @@ export default axios.create({
   baseURL: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
   headers: {
     "Content-type": "application/json",
-    "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/teams"
-  },
+    "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/",
+    "Access-Control-Allow-Credentials": "true"
+  }
 });
