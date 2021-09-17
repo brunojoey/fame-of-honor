@@ -1,7 +1,18 @@
 import axios from "axios";
 
+const http = () => {
+  axios.create({
+    publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
+    headers: {
+      "Content-type": "application/json",
+      "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/",
+      "Access-Control-Allow-Credentials": "true"
+    }
+  });
+};
+
 const getAllTeams = () => {
-  return axios.get("/api/teams", {
+  return http.get("/api/teams", {
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
@@ -12,7 +23,7 @@ const getAllTeams = () => {
 };
 
 const getOneTeam = (id) => {
-  return axios.get(`/api/teams/${id}`, {
+  return http.get(`/api/teams/${id}`, {
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
@@ -23,7 +34,7 @@ const getOneTeam = (id) => {
 };
 
 const getTeamInductees = (id) => {
-  return axios.get(`/api/teams/${id}/inductees`, {
+  return http.get(`/api/teams/${id}/inductees`, {
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
@@ -34,7 +45,7 @@ const getTeamInductees = (id) => {
 };
 
 const getPosition = (player_position) => {
-  return axios.get(`/api/positions/${player_position}`, {
+  return http.get(`/api/positions/${player_position}`, {
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":

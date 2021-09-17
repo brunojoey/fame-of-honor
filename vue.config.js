@@ -12,6 +12,5 @@ module.exports = {
         pathRewrite: { '^/api': '/'},
       },
     }
-  },
-  publicPath: "https://fame-of-honor-server.herokuapp.com/api/"
+  }
 }
