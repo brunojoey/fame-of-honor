@@ -1,18 +1,8 @@
 import axios from "axios";
 
-const http = () => {
-  axios.create({
-    publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
-    headers: {
-      "Content-type": "application/json",
-      "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/",
-      "Access-Control-Allow-Credentials": "true"
-    }
-  });
-};
-
 const getAllTeams = () => {
-  return http.get("/api/teams", {
+  return axios.get("/api/teams", {
+    publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
@@ -23,7 +13,8 @@ const getAllTeams = () => {
 };
 
 const getOneTeam = (id) => {
-  return http.get(`/api/teams/${id}`, {
+  return axios.get(`/api/teams/${id}`, {
+    publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
@@ -34,7 +25,8 @@ const getOneTeam = (id) => {
 };
 
 const getTeamInductees = (id) => {
-  return http.get(`/api/teams/${id}/inductees`, {
+  return axios.get(`/api/teams/${id}/inductees`, {
+    publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
@@ -45,7 +37,8 @@ const getTeamInductees = (id) => {
 };
 
 const getPosition = (player_position) => {
-  return http.get(`/api/positions/${player_position}`, {
+  return axios.get(`/api/positions/${player_position}`, {
+    publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
       "Access-Control-Allow-Origin":
