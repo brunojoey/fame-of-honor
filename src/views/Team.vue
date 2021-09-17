@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import DataService from "../services/DataService";
+import ringAPI from "../ringAPI";
 
 export default {
   name: "team",
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async getTeam(id) {
-      await DataService.getOneTeam(id)
+      await ringAPI.getOneTeam(id)
         .then((response) => {
           this.team = response.data;
           console.log("Team", response.data);
@@ -61,7 +61,7 @@ export default {
         });
     },
     async getTeamInductees(id) {
-      await DataService.getTeamInductees(id)
+      await ringAPI.getTeamInductees(id)
         .then((response) => {
           this.inductees = response.data;
           console.log("Inductees", response.data);

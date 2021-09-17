@@ -7,7 +7,6 @@ import Positions from "../views/Positions.vue"
 import Position from "../views/Position.vue"
 import Disclaimer from "../views/Disclaimer.vue"
 
-
 const routes = [
   {
     path: "/",

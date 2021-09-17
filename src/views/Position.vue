@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import DataService from "../services/DataService";
+import ringAPI from "../ringAPI";
 
 export default {
   name: "Positions",
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getPosition(player_position) {
-      DataService.getPosition(player_position)
+      ringAPI.getPosition(player_position)
         .then((response) => {
           this.positions = response.data;
           console.log("Position", response.data);

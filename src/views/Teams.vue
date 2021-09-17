@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import DataService from "../services/DataService";
+import ringAPI from "../ringAPI";
 
 export default {
   name: "teams",
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     getTeams() {
-      DataService.getAllTeams()
+      ringAPI.getAllTeams()
         .then((response) => {
           this.teams = response.data;
           console.log("Teams", response.data);
