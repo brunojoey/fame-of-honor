@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getAllTeams = () => {
-  return axios.get("/api/teams", {
+  return axios.get("https://fame-of-honor-server.herokuapp.com/api/teams", {
     publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
@@ -13,7 +13,7 @@ const getAllTeams = () => {
 };
 
 const getOneTeam = (id) => {
-  return axios.get(`/api/teams/${id}`, {
+  return axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}`, {
     publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
@@ -25,7 +25,7 @@ const getOneTeam = (id) => {
 };
 
 const getTeamInductees = (id) => {
-  return axios.get(`/api/teams/${id}/inductees`, {
+  return axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}/inductees`, {
     publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
@@ -37,7 +37,7 @@ const getTeamInductees = (id) => {
 };
 
 const getPosition = (player_position) => {
-  return axios.get(`/api/positions/${player_position}`, {
+  return axios.get(`https://fame-of-honor-server.herokuapp.com/api/positions/${player_position}`, {
     publicPath: "https://fame-of-honor-server.herokuapp.com/api/" || "http://localhost:3000/api/",
     headers: {
       "Content-type": "application/json",
