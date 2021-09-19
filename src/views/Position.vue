@@ -25,7 +25,7 @@
 
 <script>
 import axios from "axios";
-const headers = [{ "Content-Type": "application/json" }, { "origin": "false" }];
+const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/" }];
 
 export default {
   name: "Positions",
