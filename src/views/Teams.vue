@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import ringAPI from "../ringAPI";
+import axios from "axios";
+const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/" }];
 
 export default {
   name: "teams",
@@ -27,7 +28,7 @@ export default {
   },
   methods: {
     getTeams() {
-      ringAPI.getAllTeams()
+      axios.get("https://fame-of-honor-server.herokuapp.com/api/teams", { headers })
         .then((response) => {
           this.teams = response.data;
           console.log("Teams", response.data);

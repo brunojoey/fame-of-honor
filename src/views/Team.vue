@@ -39,7 +39,8 @@
 </template>
 
 <script>
-import ringAPI from "../ringAPI";
+import axios from "axios";
+const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/" }];
 
 export default {
   name: "team",
@@ -51,7 +52,7 @@ export default {
   },
   methods: {
     async getTeam(id) {
-      await ringAPI.getOneTeam(id)
+      await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}`, { headers })
         .then((response) => {
           this.team = response.data;
           console.log("Team", response.data);
@@ -61,7 +62,7 @@ export default {
         });
     },
     async getTeamInductees(id) {
-      await ringAPI.getTeamInductees(id)
+      await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}/inductees`, { headers })
         .then((response) => {
           this.inductees = response.data;
           console.log("Inductees", response.data);
