@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     getTeams() {
-      axios.get("https://fame-of-honor.herokuapp.com/api/teams", { headers })
+      axios.get("https://fame-of-honor-server.herokuapp.com/api/teams", { headers })
         .then((response) => {
           this.teams = response.data;
           console.log("Teams", response.data);
