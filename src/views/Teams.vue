@@ -16,7 +16,7 @@
 
 <script>
 import axios from "axios";
-const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://fame-of-honor-server.herokuapp.com/api/teams" }];
+const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://www.the-fame-of-honor-server.herokuapp.com" }];
 
 export default {
   name: "teams",
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     getTeams() {
-      axios.get("https://fame-of-honor-server.herokuapp.com/api/teams", { headers })
+      axios.get("https://fame-of-honor.herokuapp.com/api/teams", { headers })
         .then((response) => {
           this.teams = response.data;
           console.log("Teams", response.data);
