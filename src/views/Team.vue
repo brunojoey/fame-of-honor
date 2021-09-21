@@ -67,10 +67,6 @@ export default {
         .then((response) => {
           this.inductees = response.data;
           console.log("Inductees", response.data);
-        })
-        .catch((err) => {
-          console.log("error", err);
-          Promise.reject(err);
         });
     },
   },

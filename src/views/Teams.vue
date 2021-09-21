@@ -32,12 +32,8 @@ export default {
         .then((response) => {
           this.teams = response.data;
           console.log("Teams", response.data);
-        })
-        .catch((err) => {
-          console.log("error", err);
-          return Promise.reject(err);
         });
-    },
+      },
   },
   mounted() {
     this.getTeams();

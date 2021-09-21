@@ -40,10 +40,6 @@ export default {
         .then((response) => {
           this.positions = response.data;
           console.log("Position", response.data);
-        })
-        .catch((err) => {
-          console.log("error", err);
-          return Promise.reject(err);
         });
     },
   },
