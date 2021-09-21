@@ -70,6 +70,7 @@ export default {
         })
         .catch((err) => {
           console.log("error", err);
+          Promise.reject(err);
         });
     },
   },

@@ -33,8 +33,9 @@ export default {
           this.teams = response.data;
           console.log("Teams", response.data);
         })
-        .catch((e) => {
-          console.log("error", e);
+        .catch((err) => {
+          console.log("error", err);
+          return Promise.reject(err);
         });
     },
   },

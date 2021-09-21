@@ -43,6 +43,7 @@ export default {
         })
         .catch((err) => {
           console.log("error", err);
+          return Promise.reject(err);
         });
     },
   },
