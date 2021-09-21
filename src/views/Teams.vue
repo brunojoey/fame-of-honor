@@ -16,7 +16,7 @@
 
 <script>
 import axios from "axios";
-const headers = [{ "Content-Type": "application/json" }, { "Mode": "No-Cors" }, { "Credentials": "Include" }];
+const headers = [{ "Content-Type": "application/json" }, { "Mode": "Cors" }, { "Credentials": "Include" }];
 
 export default {
   name: "teams",
