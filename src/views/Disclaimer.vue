@@ -52,6 +52,7 @@
 .disclaimer-page {
   margin: 1rem;
   font-size: 1.15rem;
+  height: 35rem;
 }
 
 @media screen and (max-width: 37.5em) {

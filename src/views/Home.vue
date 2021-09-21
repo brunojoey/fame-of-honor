@@ -21,6 +21,7 @@
 
 .home-div {
   background-image: linear-gradient(to right bottom, #2c3e50, 70%, white);
+  height: 35rem;
 }
 
 .home-header {
