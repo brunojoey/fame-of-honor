@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async getTeam(id) {
-      const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
+      const headers = { "Content-Type": "application/json" };
       await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}`, { headers })
         .then((response) => {
           this.team = response.data;
@@ -62,12 +62,12 @@ export default {
         });
     },
     async getTeamInductees(id) {
-      const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
-      await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}/inductees`, { headers })
+      const headers = { "Content-Type": "application/json" };
+      await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}/inductees`, { headers, mode: "cors" })
         .then((response) => {
           this.inductees = response.data;
           console.log("Inductees", response.data);
-        });
+        }).catch((err) => console.log("error", err));
     },
   },
   mounted() {

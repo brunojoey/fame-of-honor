@@ -1,17 +1,17 @@
 <template>
-<div>
-  <h1 class="team-header">Teams</h1>
-  <div class="team-page">
-    <div :key="team.id" v-for="team in teams" class="team-card">
-      <h3 class="team-name">
-        <router-link :to="'/teams/' + team.id" class="team-link">{{
-          team.team_name
-        }}</router-link>
-      </h3>
-      <img class="team-logo" :src="team.logo" :alt="team.logo" />
+  <div>
+    <h1 class="team-header">Teams</h1>
+    <div class="team-page">
+      <div :key="team.id" v-for="team in teams" class="team-card">
+        <h3 class="team-name">
+          <router-link :to="'/teams/' + team.id" class="team-link">{{
+            team.team_name
+          }}</router-link>
+        </h3>
+        <img class="team-logo" :src="team.logo" :alt="team.logo" />
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
@@ -27,13 +27,18 @@ export default {
   },
   methods: {
     getTeams() {
-      const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
-      axios.get("https://fame-of-honor-server.herokuapp.com/api/teams", { headers })
+      const headers = { "Content-Type": "application/json" };
+      axios
+        .get("https://fame-of-honor-server.herokuapp.com/api/teams", {
+          headers,
+          mode: "cors",
+        })
         .then((response) => {
           this.teams = response.data;
           console.log("Teams", response.data);
-        });
-      },
+        })
+        .catch((err) => console.log("error", err));
+    },
   },
   mounted() {
     this.getTeams();

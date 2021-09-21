@@ -35,12 +35,12 @@ export default {
   },
   methods: {
     getPosition(player_position) {
-      const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
-      axios.get(`https://fame-of-honor-server.herokuapp.com/api/positions/${player_position}`, { headers })
+      const headers = { "Content-Type": "application/json" };
+      axios.get(`https://fame-of-honor-server.herokuapp.com/api/positions/${player_position}`, { headers, mode: "cors" })
         .then((response) => {
           this.positions = response.data;
           console.log("Position", response.data);
-        });
+        }).catch((err) => console.log("error", err));
     },
   },
   mounted() {
