@@ -40,7 +40,6 @@
 
 <script>
 import axios from "axios";
-const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
 
 export default {
   name: "team",
@@ -52,6 +51,7 @@ export default {
   },
   methods: {
     async getTeam(id) {
+      const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
       await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}`, { headers })
         .then((response) => {
           this.team = response.data;
