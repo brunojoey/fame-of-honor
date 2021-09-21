@@ -62,6 +62,7 @@ export default {
         });
     },
     async getTeamInductees(id) {
+      const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
       await axios.get(`https://fame-of-honor-server.herokuapp.com/api/teams/${id}/inductees`, { headers })
         .then((response) => {
           this.inductees = response.data;
