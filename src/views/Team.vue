@@ -40,7 +40,7 @@
 
 <script>
 import axios from "axios";
-const headers = [{ "Content-Type": "application/json" }, { "Access-Control-Allow-Origin": "https://the-fame-of-honor.herokuapp.com" }];
+const headers = [{ "Content-Type": "application/json" }, { "Mode": "No-Cors" }, { "Credentials": "Include" }];
 
 export default {
   name: "team",
