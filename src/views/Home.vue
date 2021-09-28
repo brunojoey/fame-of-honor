@@ -45,6 +45,7 @@
   .home-div {
     display: flex;
     flex-direction: column;
+    height: 85vh;
   }  
 
   .home-header {
