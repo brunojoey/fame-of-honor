@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
+import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 import Home from "../views/Home.vue"
 import Teams from "../views/Teams.vue"
@@ -44,5 +46,19 @@ const router = createRouter({
   history: createWebHistory(process.env.baseURL), 
   routes
 });
+
+router.beforeResolve((to, from, next) => {
+  // If this isn't an initial page load.
+  if (to.name) {
+    // Start the route progress bar.
+    NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((NProgress) => {
+  // Complete the animation of the route progress bar.
+  NProgress.done()
+})
 
 export default router
