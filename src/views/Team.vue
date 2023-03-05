@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="inductee">
-    <h1 :key="team.id">{{ team.team_name }}</h1>
+    <h1 :key="team.id" class="team-header">{{ team.team_name }}</h1>
     <img v-bind:src="team.logo" :alt="team.logo" class="team-page-logo" />
     <p class="history-ring">
       <strong>Ring of Honor History: </strong> {{ team.history }}
@@ -83,6 +83,10 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 1rem;
+}
+
+.team-header {
+  font-family: "EB Garamond", "Garamond", "Times New Roman", Times, serif;
 }
 
 .team-page-logo {

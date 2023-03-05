@@ -34,7 +34,6 @@
 }
 
 .home-paragraph {
-  width: 28.5%;
   padding-left: 2rem;
   font-size: 1.5rem;
   color: white;

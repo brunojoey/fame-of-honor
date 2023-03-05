@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1 class="team-header">Teams</h1>
-    <div class="team-page">
+    <h1 class="teams-header">Teams</h1>
+    <div class="teams-page">
       <div :key="team.id" v-for="team in teams" class="team-card">
         <h3 class="team-name">
           <router-link :to="'/teams/' + team.id" class="team-link">{{
@@ -47,14 +47,15 @@ export default {
 </script>
 
 <style>
-.team-header {
+.teams-header {
+  font-family: "EB Garamond", "Garamond", "Times New Roman", Times, serif;
   text-align: center;
   padding: 1rem;
   color: #2c3e50;
   font-weight: bold;
 }
 
-.team-page {
+.teams-page {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   column-gap: 6rem;

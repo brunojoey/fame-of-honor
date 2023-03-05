@@ -58,6 +58,10 @@ export default {
   padding: 1rem 5rem 1rem 5rem;
 }
 
+.position-header {
+  font-family: "EB Garamond", "Garamond", "Times New Roman", Times, serif;
+}
+
 .player-card {
   background-color: #3f5061;
   color: white;

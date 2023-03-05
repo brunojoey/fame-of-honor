@@ -36,18 +36,10 @@
 }
 
 .nav-item:hover {
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(32, 87, 236);
-  font-size: 1.45rem;
 }
 
 .nav-item:active {
-  -webkit-text-fill-color: rgb(
-    32,
-    87,
-    236
-  ); /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 }

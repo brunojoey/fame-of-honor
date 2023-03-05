@@ -113,6 +113,7 @@
 
 <style>
 .position-header {
+  font-family: "EB Garamond", "Garamond", "Times New Roman", Times, serif;
   text-align: center;
   padding: 1rem;
   color: #2c3e50;
